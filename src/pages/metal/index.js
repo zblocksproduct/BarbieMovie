@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as tga from "../../components/tga-verifier.js";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +16,28 @@ export default function Metal() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+async function checkTrue() {
+    if (await verify()) {
+      openModal();
+    }
+  }
+
+  async function verify() {
+    const conf = {
+      code: 'Z1701785727770347',
+      id: '44e2eea6-0260-4070-a399-07538e67085a',
+    };
+    const response = await tga.GatedVerifier.verify(conf);
+    if (response.status) {
+      // response.data.verified true means user has required NFT.
+      return response.data.verified;
+    } else {
+      console.error(response.data.errorMessage);
+      return false;
+    }
+  }
+  
   return (
     <div className="max-w-[1600px] w-[100%] m-auto">
       <Header />
@@ -73,7 +96,7 @@ export default function Metal() {
                 basket.
               </p>
               <div
-                onClick={openModal}
+                onClick={checkTrue}
                 className="cursor-pointer sm:w-[274px] w-[100%] lg:m-0 m-auto lg:mt-0 mt-[40px] sm:h-[78px] h-[60px] flex justify-center items-center rounded-full sm:text-[25px] text-[22px] font-bold text-white bg-[#E93FA6]"
               >
                 Apply Discount
