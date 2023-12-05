@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import * as tga from "../../components/tga-verifier.js";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { useNavigate } from "react-router-dom";
 import Modal from "../../components/modal";
+import * as tga from "../../components/tga-verifier.js";
 
 export default function Metal() {
   const navigate = useNavigate();
