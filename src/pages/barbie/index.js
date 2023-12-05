@@ -74,8 +74,8 @@ export default function Barbei() {
           <div className="flex sm:flex-row flex-col justify-center items-center sm:mt-[60px] mt-[40px]">
             <div
               onClick={() => {
-                navigate("/experience");
-                window.scrollTo(0, 0);
+                window.location.href =
+              "https://wallettest.zblocks.io?gift=38f2e57d0e2067e1bc75f01cef47&hint=microsoft";
               }}
               className="max-w-[360px] cursor-pointer w-[100%] h-[74px] bg-[#E93FA6] rounded-full text-white flex justify-center items-center text-[22px] font-medium"
             >
@@ -84,8 +84,8 @@ export default function Barbei() {
             </div>
             <div
               onClick={() => {
-                navigate("/experience");
-                window.scrollTo(0, 0);
+                window.location.href =
+              "https://wallettest.zblocks.io?gift=38f2e57d0e2067e1bc75f01cef47&hint=google";
               }}
               className="max-w-[360px] cursor-pointer w-[100%] sm:ml-[30px] sm:mt-0 mt-[20px] h-[74px] bg-[#E93FA6] rounded-full text-white flex justify-center items-center text-[22px] font-medium"
             >
